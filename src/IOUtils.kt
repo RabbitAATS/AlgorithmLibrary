@@ -1,11 +1,8 @@
-fun printIntList(a: List<Int>) {
+fun <T> List<T>.print() =
+    println(joinToString(" "))
 
-    println(a.joinToString(" "))
-}
+fun readIntList(): List<Int> =
+    readLine()?.let{ line -> line.split(" ").map{it.toInt()}} ?: emptyList()
 
-fun printListOfIntList(a: List<List<Int>>) {
-
-    for(i in 0 .. a.size -1) {
-        println(a[i].joinToString(" "))
-    }
-}
+fun readList(): List<String> =
+    readLine()?.let{ line -> line.split(" ")} ?: emptyList()
